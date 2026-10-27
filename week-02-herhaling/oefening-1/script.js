@@ -1,38 +1,35 @@
-// ============================================================
-//  Week 2 — Oefening 1: Functies herhalen
-//  Schrijf de vier functies af. Het aanroepen en tonen
-//  in de DOM staat er al.
-// ============================================================
-
-// 1. Schrijf een functie die twee getallen optelt en het resultaat teruggeeft
+ // 1. Twee getallen optellen
 function optellen(a, b) {
-  // TODO
+    return a + b;
 }
 
-// 2. Schrijf een functie die true teruggeeft als het getal even is, anders false
+// 2. Controleren of een getal even is
 function isEven(getal) {
-  // TODO
+    if (getal % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-// 3. Schrijf een functie die een begroeting teruggeeft: 'Hallo, <naam>!'
+// 3. Een begroeting teruggeven
 function groet(naam) {
-  // TODO
+    return 'Hallo, ' + naam + '!';
 }
 
-// 4. Schrijf een functie die celsius omrekent naar fahrenheit
-//    formule: celsius * 9 / 5 + 32
+// 4. Celsius omrekenen naar Fahrenheit
 function celsiusNaarFahrenheit(celsius) {
-  // TODO
+    return celsius * 9 / 5 + 32;
 }
 
-// Dit hoef je niet aan te passen — dit toont je resultaten in de DOM:
+// Resultaten tonen in de DOM
 document.getElementById('result-optellen').textContent =
-  '3 + 5 = ' + optellen(3, 5);
+    '3 + 5 = ' + optellen(3, 5);
 
 document.getElementById('result-even').textContent =
-  'Is 8 even? ' + isEven(8);
+    'Is 8 even? ' + isEven(8);
 
 document.getElementById('result-groet').textContent = groet('Sanne');
 
 document.getElementById('result-temp').textContent =
-  '20°C is ' + celsiusNaarFahrenheit(20) + '°F';
+    '20°C is ' + celsiusNaarFahrenheit(20) + '°F';

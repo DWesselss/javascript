@@ -1,15 +1,27 @@
-// ============================================================
-//  Week 2 — Oefening 2: Basis DOM-manipulatie
-// ============================================================
+ // 1. Titel aanpassen
+const title = document.getElementById('title');
+title.textContent = 'Oefening 2 - DOM-manipulatie';
 
-// 1. Selecteer #title met getElementById en verander de tekst
-//    naar iets anders met textContent
+// 2. Tekstkleur wisselen
+const message = document.getElementById('message');
+const toggleBtn = document.getElementById('toggle-btn');
+let isRood = false;
 
+toggleBtn.addEventListener('click', function() {
+    if (isRood) {
+        message.style.color = 'black';
+        isRood = false;
+    } else {
+        message.style.color = 'red';
+        isRood = true;
+    }
+});
 
-// 2. Voeg een click event listener toe aan #toggle-btn.
-//    Bij klik wisselt de tekstkleur van #message tussen rood en zwart.
-//    Gebruik een variabele om bij te houden of de tekst nu rood is.
+// 3. Begroeting tonen
+const greetBtn = document.getElementById('greet-btn');
 
-
-// 3. Voeg een click event listener toe aan #greet-btn.
-//    Lees de waarde van #name-input uit en toon 'Hallo, <naam>!' in #greeting.
+greetBtn.addEventListener('click', function() {
+    const naam = document.getElementById('name-input').value;
+    document.getElementById('greeting').textContent =
+        'Hallo, ' + naam + '!';
+});
