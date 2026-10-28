@@ -110,3 +110,5 @@ main {
   color: white;
   border-color: #c0392b;
 }
+
+#tasks li.afgevinkt span { text-decoration: line-through; color: #999; }
