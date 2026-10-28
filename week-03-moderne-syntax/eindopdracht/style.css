@@ -92,3 +92,6 @@ button:hover {
   margin: 0.25rem 0;
   font-size: 0.95rem;
 }
+
+.delete-button { margin-top: 0.75rem; background: #b83232; }
+.delete-button:hover { background: #922626; }
