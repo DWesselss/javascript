@@ -17,28 +17,43 @@ let searchTerm = '';
 let sorting = '';
 
 const showProducts = (list) => {
-  // Toon elke productnaam als een <article> in #products
-  // Laat in #counter de hoeveelheid producten zien
+  const container = document.getElementById('products');
+  container.innerHTML = '';
+
+  list.forEach(name => {
+    const article = document.createElement('article');
+    article.textContent = name;
+    container.appendChild(article);
+  });
+
+  document.getElementById('counter').textContent = `${list.length} producten`;
 };
 
 const filterProducts = () => {
-  // Maak een variabele 'filtered' aan door de products array te filteren op searchTerm
-  // Gebruik hiervoor filter() en includes() en toLowerCase()
+  const filtered = products.filter(name => name.toLowerCase().includes(searchTerm.toLowerCase()));
 
-  // Sorteer hier op sorting:
-  // als sorting 'az' is, sorteer van A naar Z
-  // als sorting 'za' is, sorteer van Z naar A
+  if (sorting === 'az') {
+    filtered.sort((a, b) => a.localeCompare(b, 'nl'));
+  } else if (sorting === 'za') {
+    filtered.sort((a, b) => a.localeCompare(b, 'nl')).reverse();
+  }
 
   showProducts(filtered);
 };
 
-// Maak een eventlistener voor de #search-bar input
-// Sla de waarde op in de searchTerm variabele en roep filterProducts() aan
+document.getElementById('search-bar').addEventListener('input', event => {
+  searchTerm = event.target.value;
+  filterProducts();
+});
 
-// Maak een eventlistener voor de #sort-az button
-// Zet sorting op 'az' en roep filterProducts() aan
+document.getElementById('sort-az').addEventListener('click', () => {
+  sorting = 'az';
+  filterProducts();
+});
 
-// Maak een eventlistener voor de #sort-za button
-// Zet sorting op 'za' en roep filterProducts() aan
+document.getElementById('sort-za').addEventListener('click', () => {
+  sorting = 'za';
+  filterProducts();
+});
 
 filterProducts();
