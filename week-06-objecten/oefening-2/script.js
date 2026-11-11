@@ -4,10 +4,21 @@ const people = [
   { name: 'Sara', age: 22, city: 'Utrecht' },
 ];
 
+const origineel = document.querySelector('#origineel');
 
-// 1. Toon in #origineel de originele lijst met alleen namen en steden.
-//    Gebruik een for...of loop en destructuring: const { name, city } = person
-// 2. Maak met .map() en de spread operator een nieuwe array waarin
-//    de stad van elke persoon is gewijzigd naar 'Den Haag'.
-//    De originele people-array moet onveranderd blijven.
-// 3. Toon deze nieuwe lijst in #kopie, ook met destructuring.
+for (const person of people) {
+  const { name, city } = person;
+  const p = document.createElement('p');
+  p.textContent = `${name} woont in ${city}`;
+  origineel.appendChild(p);
+}
+
+const updatedPeople = people.map(person => ({ ...person, city: 'Den Haag' }));
+const kopie = document.querySelector('#kopie');
+
+for (const person of updatedPeople) {
+  const { name, city } = person;
+  const p = document.createElement('p');
+  p.textContent = `${name} woont in ${city}`;
+  kopie.appendChild(p);
+}
