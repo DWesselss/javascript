@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "title": "Interstellar",
+    "director": "Christopher Nolan",
+    "year": 2014,
+    "genre": "Sciencefiction"
+  },
+  {
+    "title": "Inception",
+    "director": "Christopher Nolan",
+    "year": 2010,
+    "genre": "Actie"
+  },
+  {
+    "title": "The Matrix",
+    "director": "Lana en Lilly Wachowski",
+    "year": 1999,
+    "genre": "Sciencefiction"
+  },
+  {
+    "title": "Spider-Man: Into the Spider-Verse",
+    "director": "Bob Persichetti, Peter Ramsey en Rodney Rothman",
+    "year": 2018,
+    "genre": "Animatie"
+  }
+]

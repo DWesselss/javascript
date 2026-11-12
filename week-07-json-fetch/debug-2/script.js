@@ -1,5 +1,5 @@
-// Fout gevonden: _______________
-// Oplossing: _______________
+// Fout was: extra komma na het laatste product in products.json
+// Oplossing: verwijder de laatste komma zodat de JSON geldig is
 
 fetch('./products.json')
   .then(r => r.json())

@@ -1,7 +1,7 @@
-// Fout gevonden: _______________
-// Oplossing: _______________
+// Fout was: verkeerd bestandspad (new.json in plaats van news.json)
+// Oplossing: haal de data op uit news.json
 
-fetch('./new.json')
+fetch('./news.json')
   .then(r => r.json())
   .then(messages => {
     const list = document.querySelector('#results');
